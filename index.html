@@ -20,7 +20,6 @@
     --gray: #4A5568;
     --gray-light: #E2E8F0;
     --border: #D0DFF0;
-    --chat-bg: #F0F6FF;
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
@@ -29,69 +28,7 @@
     background: var(--off-white);
     color: var(--black);
     line-height: 1.6;
-    min-height: 100vh;
   }
-
-  /* ── HEADER ── */
-  header {
-    background: var(--navy);
-    color: var(--white);
-    padding: 0 2rem;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    border-bottom: 3px solid var(--sky);
-  }
-  .header-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    gap: 1rem;
-  }
-  .header-brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-  }
-  .header-logo {
-    width: 36px;
-    height: 36px;
-    background: var(--sky);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 16px;
-    color: var(--white);
-    flex-shrink: 0;
-  }
-  .header-title {
-    font-family: 'DM Serif Display', serif;
-    font-size: 18px;
-    color: var(--white);
-    letter-spacing: 0.01em;
-  }
-  .header-title span { color: var(--sky-mid); }
-  nav { display: flex; gap: 0; }
-  nav a {
-    color: var(--sky-light);
-    text-decoration: none;
-    font-size: 13px;
-    font-weight: 500;
-    padding: 0 14px;
-    height: 64px;
-    display: flex;
-    align-items: center;
-    border-bottom: 3px solid transparent;
-    margin-bottom: -3px;
-    transition: color 0.2s, border-color 0.2s;
-    white-space: nowrap;
-  }
-  nav a:hover { color: var(--white); border-color: var(--sky); }
 
   /* ── HERO ── */
   .hero {
@@ -100,6 +37,7 @@
     padding: 5rem 2rem 4rem;
     position: relative;
     overflow: hidden;
+    text-align: center;
   }
   .hero::before {
     content: '';
@@ -117,12 +55,7 @@
     border-radius: 50%;
     background: radial-gradient(circle, rgba(74,144,217,0.10) 0%, transparent 70%);
   }
-  .hero-inner {
-    max-width: 900px;
-    margin: 0 auto;
-    position: relative;
-    z-index: 1;
-  }
+  .hero-inner { max-width: 800px; margin: 0 auto; position: relative; z-index: 1; }
   .hero-badge {
     display: inline-flex;
     align-items: center;
@@ -150,49 +83,36 @@
     font-size: 1.1rem;
     color: rgba(255,255,255,0.80);
     max-width: 600px;
-    margin-bottom: 2.5rem;
+    margin: 0 auto;
     font-weight: 300;
   }
-  .hero-cta {
-    display: flex;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .btn-primary {
-    background: var(--sky);
-    color: var(--white);
-    padding: 12px 28px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    border: none;
-    cursor: pointer;
-    transition: background 0.2s, transform 0.15s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .btn-primary:hover { background: var(--sky-mid); transform: translateY(-1px); }
-  .btn-outline {
-    background: transparent;
-    color: var(--white);
-    padding: 12px 28px;
-    border-radius: 8px;
-    font-size: 14px;
-    font-weight: 500;
-    text-decoration: none;
-    border: 1.5px solid rgba(255,255,255,0.35);
-    cursor: pointer;
-    transition: border-color 0.2s, background 0.2s;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-  }
-  .btn-outline:hover { border-color: var(--white); background: rgba(255,255,255,0.08); }
 
-  /* ── MAIN LAYOUT ── */
-  main { max-width: 1200px; margin: 0 auto; padding: 3rem 2rem; }
+  /* ── NAV PILLS ── */
+  .nav-pills {
+    background: var(--navy);
+    padding: 0 2rem;
+    border-bottom: 3px solid var(--sky);
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+  }
+  .nav-pills a {
+    color: var(--sky-light);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 14px 18px;
+    display: inline-block;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -3px;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+  }
+  .nav-pills a:hover { color: var(--white); border-color: var(--sky); }
+
+  /* ── MAIN ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 4rem; }
 
   /* ── SECTION LABELS ── */
   .section-label {
@@ -201,94 +121,126 @@
     letter-spacing: 0.12em;
     text-transform: uppercase;
     color: var(--sky);
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
   }
   .section-title {
     font-family: 'DM Serif Display', serif;
-    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
     color: var(--navy);
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     line-height: 1.25;
   }
   .section-desc {
     color: var(--gray);
-    font-size: 0.97rem;
+    font-size: 0.95rem;
     max-width: 620px;
-    margin-bottom: 2.5rem;
+    margin-bottom: 2.25rem;
     font-weight: 300;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 4rem 0;
   }
 
   /* ── TEN COMMANDMENTS ── */
-  #commandments { margin-bottom: 5rem; }
-  .commandments-grid {
+  .commandments-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem 3rem;
+    align-items: start;
   }
+  @media (max-width: 700px) { .commandments-layout { grid-template-columns: 1fr; } }
+
+  .commandments-col { display: flex; flex-direction: column; gap: 1rem; }
+
   .commandment-card {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 1.4rem 1.5rem;
+    padding: 1.25rem 1.4rem;
     display: flex;
     gap: 1rem;
     align-items: flex-start;
-    transition: box-shadow 0.2s, transform 0.2s;
   }
-  .commandment-card:hover { box-shadow: 0 4px 20px rgba(0,61,124,0.10); transform: translateY(-2px); }
   .commandment-num {
     font-family: 'DM Serif Display', serif;
     font-size: 2rem;
     color: var(--sky-light);
     line-height: 1;
     flex-shrink: 0;
-    width: 36px;
+    width: 34px;
     text-align: center;
   }
   .commandment-text strong {
     display: block;
     color: var(--navy);
-    font-size: 0.92rem;
+    font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.3rem;
+    margin-bottom: 0.25rem;
   }
   .commandment-text p {
     color: var(--gray);
-    font-size: 0.85rem;
+    font-size: 0.82rem;
     line-height: 1.55;
   }
 
-  /* ── DOS & DON'TS ── */
-  #dosdonts { margin-bottom: 5rem; }
+  /* ── STONE TABLET DIVIDER ── */
+  .tablet-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0.5rem 0 2rem;
+  }
+  .tablet-divider::before,
+  .tablet-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .tablet-icon {
+    display: flex;
+    gap: 8px;
+  }
+  .tablet-stone {
+    width: 22px;
+    height: 28px;
+    background: var(--sky-light);
+    border-radius: 6px 6px 3px 3px;
+    border: 1.5px solid var(--sky);
+  }
+
+  /* ── DOS & DONTS ── */
   .dos-donts-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
   }
   @media (max-width: 680px) { .dos-donts-grid { grid-template-columns: 1fr; } }
-  .dos-card, .donts-card {
-    border-radius: 14px;
-    padding: 1.75rem;
-  }
   .dos-card {
     background: var(--navy-light);
     border: 1px solid var(--sky-light);
+    border-radius: 14px;
+    padding: 1.75rem;
   }
   .donts-card {
     background: #FEF3F2;
     border: 1px solid #FECACA;
+    border-radius: 14px;
+    padding: 1.75rem;
   }
-  .dos-card h3 { color: var(--navy); margin-bottom: 1.2rem; font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
-  .donts-card h3 { color: #991B1B; margin-bottom: 1.2rem; font-size: 1rem; font-weight: 600; display: flex; align-items: center; gap: 8px; }
+  .dos-card h3 { color: var(--navy); margin-bottom: 1.2rem; font-size: 1rem; font-weight: 600; }
+  .donts-card h3 { color: #991B1B; margin-bottom: 1.2rem; font-size: 1rem; font-weight: 600; }
   .dos-card ul, .donts-card ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .dos-card li { font-size: 0.88rem; color: var(--navy-dark); padding-left: 1.2rem; position: relative; }
+  .dos-card li { font-size: 0.87rem; color: var(--navy-dark); padding-left: 1.3rem; position: relative; }
   .dos-card li::before { content: '✓'; position: absolute; left: 0; color: var(--sky); font-weight: 700; }
-  .donts-card li { font-size: 0.88rem; color: #7F1D1D; padding-left: 1.2rem; position: relative; }
+  .donts-card li { font-size: 0.87rem; color: #7F1D1D; padding-left: 1.3rem; position: relative; }
   .donts-card li::before { content: '✕'; position: absolute; left: 0; color: #EF4444; font-weight: 700; }
   .dos-card li strong, .donts-card li strong { display: block; font-weight: 600; margin-bottom: 2px; }
 
-  /* ── PROMPT TIPS ── */
-  #prompt-tips { margin-bottom: 5rem; }
+  /* ── PROMPT FORMULA ── */
   .formula-box {
     background: var(--navy);
     color: var(--white);
@@ -301,11 +253,6 @@
     flex-wrap: wrap;
     gap: 0;
   }
-  .formula-part {
-    display: flex;
-    align-items: center;
-    gap: 0;
-  }
   .formula-pill {
     background: rgba(74,144,217,0.2);
     border: 1.5px solid var(--sky-mid);
@@ -314,16 +261,13 @@
     text-align: center;
   }
   .formula-pill .label { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--sky-light); }
-  .formula-pill .value { font-size: 15px; font-weight: 600; color: var(--white); margin-top: 2px; }
-  .formula-plus {
-    font-size: 1.4rem;
-    color: var(--sky-mid);
-    padding: 0 14px;
-    font-weight: 300;
-  }
+  .formula-pill .value { font-size: 14px; font-weight: 600; color: var(--white); margin-top: 2px; }
+  .formula-plus { font-size: 1.4rem; color: var(--sky-mid); padding: 0 14px; font-weight: 300; }
+
+  /* ── TIPS GRID ── */
   .tips-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1rem;
   }
   .tip-card {
@@ -332,7 +276,7 @@
     border-radius: 12px;
     padding: 1.4rem;
   }
-  .tip-card .tip-icon {
+  .tip-icon {
     width: 36px; height: 36px;
     background: var(--navy-light);
     border-radius: 8px;
@@ -343,41 +287,31 @@
   .tip-card h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); margin-bottom: 0.4rem; }
   .tip-card p { font-size: 0.82rem; color: var(--gray); line-height: 1.55; }
 
-  /* ── PROMPT EXAMPLES ── */
-  #prompts { margin-bottom: 5rem; }
-  .prompts-tabs {
-    display: flex;
-    gap: 6px;
-    flex-wrap: wrap;
-    margin-bottom: 1.5rem;
+  /* ── PROMPT LIBRARY ── */
+  .prompt-area { display: flex; flex-direction: column; gap: 1rem; }
+  .prompt-group-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--sky);
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
   }
-  .tab-btn {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 7px 16px;
-    font-size: 12px;
-    font-weight: 600;
-    color: var(--gray);
-    cursor: pointer;
-    transition: all 0.2s;
-  }
-  .tab-btn.active, .tab-btn:hover {
-    background: var(--navy);
-    color: var(--white);
-    border-color: var(--navy);
-  }
-  .prompt-cards { display: flex; flex-direction: column; gap: 1rem; }
   .prompt-card {
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 1.4rem 1.5rem;
-    display: none;
+    padding: 1.25rem 1.4rem;
   }
-  .prompt-card.visible { display: block; }
-  .prompt-card-header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.8rem; }
-  .prompt-card-header h4 { font-size: 0.92rem; font-weight: 600; color: var(--navy); }
+  .prompt-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .prompt-card-header h4 { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
   .prompt-platform {
     font-size: 10px;
     font-weight: 700;
@@ -391,35 +325,20 @@
     flex-shrink: 0;
   }
   .prompt-text {
-    background: var(--chat-bg);
+    background: var(--navy-light);
     border-left: 3px solid var(--sky);
     border-radius: 0 8px 8px 0;
-    padding: 1rem 1.25rem;
-    font-size: 0.84rem;
+    padding: 0.9rem 1.1rem;
+    font-size: 0.83rem;
     color: var(--navy-dark);
     line-height: 1.65;
     font-style: italic;
-    margin-bottom: 0.85rem;
+    margin-bottom: 0.7rem;
   }
-  .prompt-tip { font-size: 0.8rem; color: var(--gray); }
+  .prompt-tip { font-size: 0.79rem; color: var(--gray); }
   .prompt-tip strong { color: var(--navy); }
-  .copy-btn {
-    background: none;
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    padding: 5px 12px;
-    font-size: 11px;
-    font-weight: 600;
-    color: var(--sky);
-    cursor: pointer;
-    transition: all 0.2s;
-    float: right;
-    margin-top: 0.5rem;
-  }
-  .copy-btn:hover { background: var(--navy-light); border-color: var(--sky); }
 
   /* ── USE CASES ── */
-  #usecases { margin-bottom: 5rem; }
   .usecase-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -430,9 +349,7 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 1.5rem;
-    transition: box-shadow 0.2s, transform 0.2s;
   }
-  .usecase-card:hover { box-shadow: 0 4px 20px rgba(0,61,124,0.10); transform: translateY(-2px); }
   .usecase-icon {
     width: 44px; height: 44px;
     border-radius: 10px;
@@ -441,190 +358,79 @@
     font-size: 20px;
     margin-bottom: 1rem;
   }
-  .usecase-card h3 { font-size: 0.95rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
+  .usecase-card h3 { font-size: 0.93rem; font-weight: 600; color: var(--navy); margin-bottom: 0.5rem; }
   .usecase-card ul { list-style: none; display: flex; flex-direction: column; gap: 5px; }
-  .usecase-card li { font-size: 0.82rem; color: var(--gray); padding-left: 1rem; position: relative; }
-  .usecase-card li::before { content: '·'; position: absolute; left: 2px; color: var(--sky); font-weight: 700; font-size: 1.2rem; top: -2px; }
+  .usecase-card li { font-size: 0.81rem; color: var(--gray); padding-left: 1rem; position: relative; }
+  .usecase-card li::before { content: '·'; position: absolute; left: 2px; color: var(--sky); font-weight: 700; font-size: 1.1rem; top: -2px; }
 
-  /* ── CHATBOT SECTION ── */
-  #chatbot { margin-bottom: 3rem; }
-  .chat-wrapper {
-    display: grid;
-    grid-template-columns: 1fr 420px;
-    gap: 2rem;
-    align-items: start;
-  }
-  @media (max-width: 900px) { .chat-wrapper { grid-template-columns: 1fr; } }
-  .chat-intro h2 { font-family: 'DM Serif Display', serif; font-size: 1.9rem; color: var(--navy); margin-bottom: 1rem; }
-  .chat-intro p { color: var(--gray); font-size: 0.95rem; margin-bottom: 1.5rem; font-weight: 300; }
-  .chat-suggestions { display: flex; flex-direction: column; gap: 8px; }
-  .chat-suggestion-btn {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 11px 16px;
-    text-align: left;
-    font-size: 0.84rem;
-    color: var(--navy);
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .chat-suggestion-btn:hover { background: var(--navy-light); border-color: var(--sky); }
-  .chat-suggestion-btn span { color: var(--sky); font-size: 16px; }
-
-  /* ── CHAT WIDGET ── */
-  .chat-widget {
-    background: var(--white);
-    border: 1px solid var(--border);
+  /* ── COPILOT CALLOUT ── */
+  .copilot-callout {
+    background: var(--navy);
     border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 8px 40px rgba(0,61,124,0.12);
-    display: flex;
-    flex-direction: column;
-    height: 600px;
-  }
-  .chat-top {
-    background: var(--navy);
-    padding: 14px 18px;
+    padding: 2.5rem 2.5rem;
     display: flex;
     align-items: center;
-    gap: 12px;
-    flex-shrink: 0;
-  }
-  .chat-top-avatar {
-    width: 36px; height: 36px;
-    border-radius: 50%;
-    background: var(--sky);
-    display: flex; align-items: center; justify-content: center;
-    font-family: 'DM Serif Display', serif;
-    font-size: 14px;
-    color: var(--white);
-    flex-shrink: 0;
-  }
-  .chat-top-info { flex: 1; }
-  .chat-top-info h3 { font-size: 13px; font-weight: 600; color: var(--white); margin: 0; }
-  .chat-top-info p { font-size: 11px; color: var(--sky-light); margin: 0; }
-  .chat-top-dot { width: 8px; height: 8px; border-radius: 50%; background: #34D399; }
-  .chat-messages {
-    flex: 1;
-    overflow-y: auto;
-    padding: 1.25rem;
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-    background: var(--chat-bg);
-  }
-  .chat-messages::-webkit-scrollbar { width: 4px; }
-  .chat-messages::-webkit-scrollbar-track { background: transparent; }
-  .chat-messages::-webkit-scrollbar-thumb { background: var(--sky-light); border-radius: 4px; }
-  .msg-row { display: flex; gap: 8px; align-items: flex-end; }
-  .msg-row.user { flex-direction: row-reverse; }
-  .msg-avatar-sm {
-    width: 26px; height: 26px;
-    border-radius: 50%;
-    background: var(--sky);
-    display: flex; align-items: center; justify-content: center;
-    font-size: 10px; font-weight: 600; color: var(--white);
-    flex-shrink: 0;
-  }
-  .msg-row.user .msg-avatar-sm { background: var(--navy); }
-  .msg-bubble {
-    max-width: 78%;
-    padding: 9px 14px;
-    border-radius: 14px;
-    font-size: 13px;
-    line-height: 1.55;
-    color: var(--black);
-    background: var(--white);
-    border: 1px solid var(--border);
-  }
-  .msg-row.user .msg-bubble {
-    background: var(--navy);
-    color: var(--white);
-    border: none;
-  }
-  .msg-bubble p { margin: 0 0 6px; }
-  .msg-bubble p:last-child { margin: 0; }
-  .msg-bubble ul { margin: 6px 0; padding-left: 1.2rem; }
-  .msg-bubble li { margin-bottom: 4px; }
-  .typing-indicator { display: flex; gap: 4px; align-items: center; padding: 2px 0; }
-  .typing-dot {
-    width: 6px; height: 6px;
-    border-radius: 50%;
-    background: var(--sky-mid);
-    animation: bounce 1.2s infinite;
-  }
-  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
-  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
-  @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
-  .chat-chips {
-    padding: 10px 14px 6px;
-    display: flex;
-    gap: 6px;
+    gap: 2rem;
     flex-wrap: wrap;
-    background: var(--chat-bg);
-    flex-shrink: 0;
   }
-  .chat-chip {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 5px 12px;
-    font-size: 11px;
-    font-weight: 500;
-    color: var(--navy);
-    cursor: pointer;
-    transition: all 0.15s;
-    white-space: nowrap;
-  }
-  .chat-chip:hover { background: var(--navy); color: var(--white); border-color: var(--navy); }
-  .chat-input-row {
-    display: flex;
-    gap: 8px;
-    padding: 12px 14px;
-    border-top: 1px solid var(--border);
-    background: var(--white);
-    flex-shrink: 0;
-    align-items: flex-end;
-  }
-  .chat-input-row textarea {
-    flex: 1;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 9px 12px;
-    font-size: 13px;
-    font-family: 'DM Sans', sans-serif;
-    resize: none;
-    outline: none;
-    color: var(--black);
-    background: var(--off-white);
-    min-height: 38px;
-    max-height: 120px;
-    line-height: 1.5;
-  }
-  .chat-input-row textarea:focus { border-color: var(--sky); }
-  .chat-send-btn {
-    width: 38px; height: 38px;
-    background: var(--navy);
-    border: none;
-    border-radius: 10px;
+  .copilot-callout-icon {
+    width: 64px; height: 64px;
+    background: rgba(74,144,217,0.25);
+    border-radius: 16px;
     display: flex; align-items: center; justify-content: center;
-    cursor: pointer;
-    transition: background 0.2s;
+    font-size: 30px;
     flex-shrink: 0;
   }
-  .chat-send-btn:hover { background: var(--sky); }
-  .chat-send-btn svg { fill: var(--white); }
-  .chat-powered {
-    text-align: center;
-    font-size: 10px;
-    color: #9CA3AF;
-    padding: 5px 0 8px;
+  .copilot-callout-text { flex: 1; min-width: 240px; }
+  .copilot-callout-text h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.5rem;
+    color: var(--white);
+    margin-bottom: 0.6rem;
+  }
+  .copilot-callout-text h3 em { font-style: italic; color: var(--sky-mid); }
+  .copilot-callout-text p {
+    color: rgba(255,255,255,0.75);
+    font-size: 0.92rem;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 1rem;
+  }
+  .copilot-starters { display: flex; flex-direction: column; gap: 6px; }
+  .copilot-starter {
+    background: rgba(74,144,217,0.15);
+    border: 1px solid rgba(74,144,217,0.3);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.82rem;
+    color: var(--sky-light);
+    font-style: italic;
+  }
+  .copilot-starter::before { content: '"'; }
+  .copilot-starter::after { content: '"'; }
+
+  /* ── BEFORE YOU SEND ── */
+  .checklist-box {
     background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 2rem;
+  }
+  .checklist-box h3 { font-size: 1rem; font-weight: 600; color: var(--navy); margin-bottom: 1.2rem; }
+  .checklist-items { display: flex; flex-direction: column; gap: 10px; }
+  .checklist-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.87rem;
+    color: var(--gray);
+  }
+  .check-box {
+    width: 18px; height: 18px;
+    border: 2px solid var(--sky);
+    border-radius: 4px;
     flex-shrink: 0;
+    margin-top: 1px;
   }
 
   /* ── FOOTER ── */
@@ -634,57 +440,36 @@
     text-align: center;
     padding: 2rem;
     font-size: 12px;
-    margin-top: 2rem;
   }
   footer strong { color: var(--sky-light); }
 
-  /* ── DIVIDER ── */
-  .section-divider {
-    border: none;
-    border-top: 1px solid var(--border);
-    margin: 0 0 4rem;
-  }
-
-  /* ── RESPONSIVE ── */
   @media (max-width: 640px) {
-    nav { display: none; }
-    .formula-box { gap: 0; flex-direction: column; }
-    .formula-plus { padding: 6px 0; transform: rotate(90deg); }
+    .formula-box { flex-direction: column; gap: 8px; }
+    .formula-plus { transform: rotate(90deg); padding: 4px 0; }
+    .copilot-callout { padding: 1.75rem; }
   }
 </style>
 </head>
 <body>
 
-<!-- HEADER -->
-<header>
-  <div class="header-inner">
-    <div class="header-brand">
-      <div class="header-logo">UJA</div>
-      <div class="header-title">AI <span>Start Here</span> Guide</div>
-    </div>
-    <nav>
-      <a href="#commandments">Commandments</a>
-      <a href="#dosdonts">Do's & Don'ts</a>
-      <a href="#prompt-tips">Prompt Tips</a>
-      <a href="#prompts">Prompts</a>
-      <a href="#usecases">Use Cases</a>
-      <a href="#chatbot">Ask the AI</a>
-    </nav>
-  </div>
-</header>
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-badge">🤖 UJA Federation of Greater Toronto · Internal Staff Guide</div>
+    <div class="hero-badge">UJA Federation of Greater Toronto · Internal Staff Guide</div>
     <h1>Your guide to using<br/><em>AI at work.</em></h1>
-    <p>Everything you need to get started with AI tools — Copilot, Claude, ChatGPT — the UJA way. Principles, prompts, use cases, and a live AI assistant to answer your questions.</p>
-    <div class="hero-cta">
-      <a href="#commandments" class="btn-primary">↓ Start Learning</a>
-      <a href="#chatbot" class="btn-outline">💬 Ask the AI Guide</a>
-    </div>
+    <p>Everything you need to get started with AI tools — Copilot, Claude, ChatGPT — the UJA way. Principles, prompts, and use cases for every team.</p>
   </div>
 </section>
+
+<!-- NAV -->
+<nav class="nav-pills">
+  <a href="#commandments">The Ten Commandments</a>
+  <a href="#dosdonts">Do's &amp; Don'ts</a>
+  <a href="#prompting">Prompt Tips</a>
+  <a href="#prompts">Prompt Library</a>
+  <a href="#usecases">Use Cases</a>
+  <a href="#copilot">Ask Copilot</a>
+</nav>
 
 <main>
 
@@ -694,77 +479,90 @@
     <h2 class="section-title">The Ten Commandments of AI</h2>
     <p class="section-desc">Memorable enough to pin to the wall. Practical enough to pull up before you hit send.</p>
 
-    <div class="commandments-grid">
-      <div class="commandment-card">
-        <div class="commandment-num">I</div>
-        <div class="commandment-text">
-          <strong>AI is a draft, not a deliverable.</strong>
-          <p>Every output needs your review, your edits, and your name before it goes anywhere. Read every word. If you wouldn't sign it as-is, it's not done.</p>
+    <div class="commandments-layout">
+
+      <!-- LEFT TABLET: I–V -->
+      <div class="commandments-col">
+        <div class="commandment-card">
+          <div class="commandment-num">I</div>
+          <div class="commandment-text">
+            <strong>AI is a draft, not a deliverable.</strong>
+            <p>Every output needs your review, your edits, and your name before it goes anywhere. Read every word. If you wouldn't sign it as-is, it's not done.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">II</div>
+          <div class="commandment-text">
+            <strong>Use only UJA-approved enterprise AI.</strong>
+            <p>Never use personal or free-tier accounts for UJA work. If it's not on the approved list, it doesn't touch our data.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">III</div>
+          <div class="commandment-text">
+            <strong>Verify before you trust.</strong>
+            <p>AI invents quotes, stats, dates, and names with total confidence. Treat every specific claim as unverified until you've checked it yourself.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">IV</div>
+          <div class="commandment-text">
+            <strong>Give AI context — it knows nothing about us.</strong>
+            <p>It doesn't know UJA, our donors, our programs, or our community. The more you tell it, the less generic the output.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">V</div>
+          <div class="commandment-text">
+            <strong>Be thoughtful about what you put in.</strong>
+            <p>Our platforms are secure, but use good judgment. Don't input what you wouldn't want mishandled. When in doubt, summarize or anonymize.</p>
+          </div>
         </div>
       </div>
-      <div class="commandment-card">
-        <div class="commandment-num">II</div>
-        <div class="commandment-text">
-          <strong>Use only UJA-approved enterprise AI.</strong>
-          <p>Never use personal or free-tier accounts for UJA work. If it's not on the approved list, it doesn't touch our data.</p>
+
+      <!-- RIGHT TABLET: VI–X -->
+      <div class="commandments-col">
+        <div class="commandment-card">
+          <div class="commandment-num">VI</div>
+          <div class="commandment-text">
+            <strong>Write in your voice, not the machine's.</strong>
+            <p>If it reads like a chatbot wrote it, rewrite it. Ban the buzzwords. Your donors and colleagues should hear you, not an algorithm.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">VII</div>
+          <div class="commandment-text">
+            <strong>A human makes every decision.</strong>
+            <p>AI can organize options, surface patterns, and draft recommendations. The decision — what we fund, who we contact, what we say — is always yours.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">VIII</div>
+          <div class="commandment-text">
+            <strong>Make it better, not just faster.</strong>
+            <p>The point of saving time is to raise the bar, not lower it. Reinvest the minutes into quality, not just volume.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">IX</div>
+          <div class="commandment-text">
+            <strong>Iterate — the first draft is rarely the best.</strong>
+            <p>Push back. Ask for alternatives. Say "try again, warmer" or "too long, cut by half." The best results take two or three rounds.</p>
+          </div>
+        </div>
+        <div class="commandment-card">
+          <div class="commandment-num">X</div>
+          <div class="commandment-text">
+            <strong>Keep learning.</strong>
+            <p>AI changes fast. Try new approaches. Share what works with your team. Stay curious.</p>
+          </div>
         </div>
       </div>
-      <div class="commandment-card">
-        <div class="commandment-num">III</div>
-        <div class="commandment-text">
-          <strong>Verify before you trust.</strong>
-          <p>AI invents quotes, stats, dates, and names with total confidence. Treat every specific claim as unverified until you've checked it yourself.</p>
-        </div>
-      </div>
-      <div class="commandment-card">
-        <div class="commandment-num">IV</div>
-        <div class="commandment-text">
-          <strong>Give AI context — it knows nothing about us.</strong>
-          <p>It doesn't know UJA, our donors, our programs, or our community. The more you tell it, the less generic the output.</p>
-        </div>
-      </div>
-      <div class="commandment-card">
-        <div class="commandment-num">V</div>
-        <div class="commandment-text">
-          <strong>Be thoughtful about what you put in.</strong>
-          <p>Our platforms are secure, but use good judgment. Don't input what you wouldn't want mishandled. When in doubt, summarize or anonymize.</p>
-        </div>
-      </div>
-      <div class="commandment-card">
-        <div class="commandment-num">VI</div>
-        <div class="commandment-text">
-          <strong>Write in your voice, not the machine's.</strong>
-          <p>If it reads like a chatbot wrote it, rewrite it. Ban the buzzwords. Your donors and colleagues should hear you, not an algorithm.</p>
-        </div>
-      </div>
-      <div class="commandment-card">
-        <div class="commandment-num">VII</div>
-        <div class="commandment-text">
-          <strong>A human makes every decision.</strong>
-          <p>AI can organize options, surface patterns, and draft recommendations. The decision — what we fund, who we contact, what we say — is always yours.</p>
-        </div>
-      </div>
-      <div class="commandment-card">
-        <div class="commandment-num">VIII</div>
-        <div class="commandment-text">
-          <strong>Make it better, not just faster.</strong>
-          <p>The point of saving time is to raise the bar, not lower it. Reinvest the minutes into quality, not just volume.</p>
-        </div>
-      </div>
-      <div class="commandment-card">
-        <div class="commandment-num">IX</div>
-        <div class="commandment-text">
-          <strong>Iterate — the first draft is rarely the best.</strong>
-          <p>Push back. Ask for alternatives. Say "try again, warmer" or "too long, cut by half." The best results take two or three rounds.</p>
-        </div>
-      </div>
-      <div class="commandment-card">
-        <div class="commandment-num">X</div>
-        <div class="commandment-text">
-          <strong>Keep learning.</strong>
-          <p>AI changes fast. Try new approaches. Share what works with your team. Stay curious.</p>
-        </div>
-      </div>
+
+    </div>
+
+    <div style="text-align:center;margin-top:2rem;padding:1rem;background:var(--navy-light);border-radius:12px;border:1px solid var(--sky-light);">
+      <p style="color:var(--navy);font-size:0.9rem;font-weight:500;font-style:italic;">"AI is a tool. You are the professional. The judgment, the relationships, and the responsibility remain yours."</p>
     </div>
   </section>
 
@@ -802,39 +600,31 @@
 
   <hr class="section-divider" />
 
-  <!-- PROMPT TIPS -->
-  <section id="prompt-tips">
+  <!-- PROMPTING TIPS -->
+  <section id="prompting">
     <div class="section-label">How to Ask</div>
     <h2 class="section-title">The Art of Prompting</h2>
     <p class="section-desc">The difference between a useless reply and a brilliant one is almost always the prompt. Four ingredients, six tricks.</p>
 
     <div class="formula-box">
-      <div class="formula-part">
-        <div class="formula-pill">
-          <div class="label">Role</div>
-          <div class="value">Who is AI being?</div>
-        </div>
+      <div class="formula-pill">
+        <div class="label">Role</div>
+        <div class="value">Who is AI being?</div>
       </div>
       <div class="formula-plus">+</div>
-      <div class="formula-part">
-        <div class="formula-pill">
-          <div class="label">Audience</div>
-          <div class="value">Who will read this?</div>
-        </div>
+      <div class="formula-pill">
+        <div class="label">Audience</div>
+        <div class="value">Who will read this?</div>
       </div>
       <div class="formula-plus">+</div>
-      <div class="formula-part">
-        <div class="formula-pill">
-          <div class="label">Goal</div>
-          <div class="value">What do you need?</div>
-        </div>
+      <div class="formula-pill">
+        <div class="label">Goal</div>
+        <div class="value">What do you need?</div>
       </div>
       <div class="formula-plus">+</div>
-      <div class="formula-part">
-        <div class="formula-pill">
-          <div class="label">Guardrail</div>
-          <div class="value">What to avoid?</div>
-        </div>
+      <div class="formula-pill">
+        <div class="label">Guardrail</div>
+        <div class="value">What to avoid?</div>
       </div>
     </div>
 
@@ -874,141 +664,130 @@
 
   <hr class="section-divider" />
 
-  <!-- PROMPT EXAMPLES -->
+  <!-- PROMPT LIBRARY -->
   <section id="prompts">
     <div class="section-label">Ready-to-Use Prompts</div>
     <h2 class="section-title">Copy, Paste, Refine</h2>
-    <p class="section-desc">Real prompts for tasks you'll actually face at UJA. Swap the [bracketed] parts and iterate.</p>
+    <p class="section-desc">Real prompts for tasks you'll actually face at UJA. Open Copilot, paste, swap the [bracketed] parts, and iterate.</p>
 
-    <div class="prompts-tabs">
-      <button class="tab-btn active" data-cat="all">All</button>
-      <button class="tab-btn" data-cat="development">Development</button>
-      <button class="tab-btn" data-cat="communications">Communications</button>
-      <button class="tab-btn" data-cat="programs">Programs</button>
-      <button class="tab-btn" data-cat="admin">Admin</button>
-      <button class="tab-btn" data-cat="copilot">Copilot-Specific</button>
-    </div>
+    <div class="prompt-area">
 
-    <div class="prompt-cards" id="promptCards">
+      <div class="prompt-group-label">Development</div>
 
-      <div class="prompt-card visible" data-cat="development">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>First-time donor thank-you</h4>
           <span class="prompt-platform">Development</span>
         </div>
         <div class="prompt-text">"Draft a 4-sentence thank-you email to a first-time Annual Campaign donor who gave $180. Warm, specific, not corporate. Leave name and campaign team signature blank for me to fill in."</div>
         <div class="prompt-tip"><strong>Tip:</strong> Adjust the amount and campaign to match the gift.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="development">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Follow-up after a donor meeting</h4>
           <span class="prompt-platform">Development</span>
         </div>
         <div class="prompt-text">"Here are my notes from a coffee with a prospect [paste notes]. Draft a follow-up email that thanks them for the time, references 2 specific things they said, and proposes a next step. Warm but professional. Under 150 words."</div>
         <div class="prompt-tip"><strong>Tip:</strong> Always verify names, dates, and quoted phrases before sending.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="communications">
+      <div class="prompt-group-label">Communications</div>
+
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Event social media post</h4>
           <span class="prompt-platform">Communications</span>
         </div>
         <div class="prompt-text">"Write a 60-word LinkedIn post announcing Walk with Israel 2026. Target audience: Toronto Jewish community, families and young professionals. Tone: energizing, proud, inclusive. End with a registration link placeholder."</div>
         <div class="prompt-tip"><strong>Tip:</strong> Ask for 3 versions. Pick the best sentence from each and combine.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="communications">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Newsletter blurb</h4>
           <span class="prompt-platform">Communications</span>
         </div>
         <div class="prompt-text">"Turn these rough notes [paste] into a 100-word newsletter item. Active voice, specific details, one clear call-to-action. No jargon, no 'excited to announce.'"</div>
         <div class="prompt-tip"><strong>Tip:</strong> Banning clichés up front saves you a rewrite cycle.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="programs">
+      <div class="prompt-group-label">Programs</div>
+
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Volunteer recruitment post</h4>
           <span class="prompt-platform">Programs</span>
         </div>
         <div class="prompt-text">"Draft a warm, inviting volunteer call-out for our senior services program. Audience: adults 30-55 looking for meaningful weekly volunteer work. 75 words. End with how to sign up. Don't use the word 'passionate.'"</div>
         <div class="prompt-tip"><strong>Tip:</strong> Name what NOT to include — saves wasted drafts.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="programs">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Speaker introduction</h4>
           <span class="prompt-platform">Programs</span>
         </div>
         <div class="prompt-text">"I'm introducing [name] at a UJA event. Here's their bio [paste]. Write a 90-second spoken introduction. Warm, specific, ends with an applause line. Avoid listing every credential."</div>
         <div class="prompt-tip"><strong>Tip:</strong> Always practice out loud — AI writes for the page, not the mouth.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="admin">
+      <div class="prompt-group-label">Admin &amp; Planning</div>
+
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Meeting minutes → action items</h4>
           <span class="prompt-platform">Admin</span>
         </div>
         <div class="prompt-text">"From these notes [paste], pull out: (1) decisions made, (2) action items with owners and dates, (3) open questions for follow-up. Use short bullets. Flag anything unclear."</div>
-        <div class="prompt-tip"><strong>Tip:</strong> Send to attendees for confirmation, not as the final record.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+        <div class="prompt-tip"><strong>Tip:</strong> Send to attendees for confirmation — not as the final record.</div>
       </div>
 
-      <div class="prompt-card visible" data-cat="admin">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Board briefing note</h4>
           <span class="prompt-platform">Admin</span>
         </div>
         <div class="prompt-text">"From these messy notes [paste], draft a one-page board briefing. Structure: (1) Background, (2) What we're recommending, (3) Key risks, (4) Ask of the board. Plain language, no more than 400 words."</div>
         <div class="prompt-tip"><strong>Tip:</strong> Give AI the structure you want — don't let it invent one.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="copilot">
+      <div class="prompt-group-label">Copilot-Specific</div>
+
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Focus review across platforms</h4>
           <span class="prompt-platform">Copilot App</span>
         </div>
         <div class="prompt-text">"Based on my work across all platforms from the last 2 weeks — can you tell me where my focus has been?"</div>
         <div class="prompt-tip"><strong>Tip:</strong> Great Monday morning check-in to orient your week.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="copilot">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Email triage</h4>
           <span class="prompt-platform">Outlook · Copilot</span>
         </div>
         <div class="prompt-text">"Review my unread emails from the last 24 hours. Group them into: 1) Needs my executive's decision 2) Needs a response from me 3) Can be delegated 4) FYI only. For each item needing action, explain the ask in one sentence and note any deadline."</div>
-        <div class="prompt-tip"><strong>Tip:</strong> Use this to start your morning — takes 30 seconds to review instead of 30 minutes.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
+        <div class="prompt-tip"><strong>Tip:</strong> Run this at the start of your morning — takes 30 seconds to review instead of 30 minutes.</div>
       </div>
 
-      <div class="prompt-card visible" data-cat="copilot">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Pre-meeting prep</h4>
           <span class="prompt-platform">Outlook Calendar · Copilot</span>
         </div>
         <div class="prompt-text">"For my meeting today with [NAME] about [TOPIC], find everything from the last 2 weeks across email, Teams, shared folders, and files that relates to [TOPIC] — even if it's not attached to the meeting."</div>
         <div class="prompt-tip"><strong>Tip:</strong> Run this 15 minutes before a meeting. Walk in prepared every time.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
-      <div class="prompt-card visible" data-cat="copilot">
+      <div class="prompt-card">
         <div class="prompt-card-header">
           <h4>Track commitments you made today</h4>
           <span class="prompt-platform">Outlook · Copilot</span>
         </div>
         <div class="prompt-text">"Review my sent emails and Teams messages from today. List any follow-ups or commitments I made so nothing slips."</div>
         <div class="prompt-tip"><strong>Tip:</strong> Run this at end-of-day. Prevents dropped balls.</div>
-        <button class="copy-btn" onclick="copyPrompt(this)">Copy</button>
       </div>
 
     </div>
@@ -1062,7 +841,7 @@
         <ul>
           <li>Data cleansing</li>
           <li>Predictive analytics</li>
-          <li>Board Member matrix analysis</li>
+          <li>Board member matrix analysis</li>
           <li>Survey theme extraction</li>
           <li>Report summarization</li>
         </ul>
@@ -1093,276 +872,46 @@
 
   <hr class="section-divider" />
 
-  <!-- CHATBOT -->
-  <section id="chatbot">
-    <div class="chat-wrapper">
-      <div class="chat-intro">
-        <div class="section-label">Live AI Assistant</div>
-        <h2>Ask the UJA AI Guide</h2>
-        <p>Have a question about using AI at UJA? Need a prompt example? Wondering how to do something in Copilot, Claude, or ChatGPT? Ask below — the assistant knows everything in this guide.</p>
-        <p style="margin-bottom:1.5rem;">Try asking about Copilot tips, prompt techniques, use cases, dos &amp; don'ts, or how to set up your AI profile.</p>
-        <div class="chat-suggestions">
-          <button class="chat-suggestion-btn" onclick="sendSuggestion(this)"><span>💡</span> How do I write a better prompt in Copilot?</button>
-          <button class="chat-suggestion-btn" onclick="sendSuggestion(this)"><span>📧</span> Give me a prompt to summarize my unread emails</button>
-          <button class="chat-suggestion-btn" onclick="sendSuggestion(this)"><span>🛡️</span> What can't I use AI for at UJA?</button>
-          <button class="chat-suggestion-btn" onclick="sendSuggestion(this)"><span>⚙️</span> How do I set up my AI profile in Copilot?</button>
-          <button class="chat-suggestion-btn" onclick="sendSuggestion(this)"><span>🎯</span> What are some AI use cases for fundraising?</button>
+  <!-- BEFORE YOU SEND + COPILOT CALLOUT -->
+  <section id="copilot">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:start;flex-wrap:wrap;">
+
+      <div class="checklist-box">
+        <h3>✅ Before you hit send</h3>
+        <div class="checklist-items">
+          <div class="checklist-item"><div class="check-box"></div><span>Did I verify every name, date, dollar figure, and quoted fact?</span></div>
+          <div class="checklist-item"><div class="check-box"></div><span>Does it sound like ME, not a corporate chatbot?</span></div>
+          <div class="checklist-item"><div class="check-box"></div><span>Did I cut AI-ish phrases ("in today's fast-paced world," "excited to announce," "leverage," "empower")?</span></div>
+          <div class="checklist-item"><div class="check-box"></div><span>For community-sensitive or external-facing content — did I loop in Communications?</span></div>
+          <div class="checklist-item"><div class="check-box"></div><span>Would I be comfortable if my manager saw this exact version?</span></div>
+          <div class="checklist-item"><div class="check-box"></div><span>Would I be comfortable if this appeared on UJA's public website?</span></div>
         </div>
       </div>
 
-      <div class="chat-widget">
-        <div class="chat-top">
-          <div class="chat-top-avatar">UJA</div>
-          <div class="chat-top-info">
-            <h3>UJA AI Start Here Guide</h3>
-            <p>AI-powered staff assistant</p>
-          </div>
-          <div class="chat-top-dot"></div>
-        </div>
-
-        <div class="chat-messages" id="chatMessages">
-          <div class="msg-row">
-            <div class="msg-avatar-sm">AI</div>
-            <div class="msg-bubble">
-              <p>Shalom! I'm the UJA AI Start Here Guide.</p>
-              <p>I can help with prompt examples, Copilot tips, AI use cases, and answering any questions about using AI tools at UJA — both Copilot specifically and other platforms generally.</p>
-              <p>What would you like to know?</p>
-            </div>
+      <div class="copilot-callout">
+        <div class="copilot-callout-icon">🤖</div>
+        <div class="copilot-callout-text">
+          <h3>Still have questions? <em>Ask Copilot.</em></h3>
+          <p>Open Microsoft Copilot and ask it anything about using AI at work. It knows your UJA environment, your files, and your emails — and it's ready to help right now.</p>
+          <p style="color:rgba(255,255,255,0.6);font-size:0.8rem;margin-bottom:0.75rem;">Try starting with one of these:</p>
+          <div class="copilot-starters">
+            <div class="copilot-starter">Help me write a better prompt for [task]</div>
+            <div class="copilot-starter">What are some ways AI could help me with [my role]?</div>
+            <div class="copilot-starter">Review my draft and suggest improvements</div>
+            <div class="copilot-starter">Summarize my emails from the last 24 hours</div>
           </div>
         </div>
-
-        <div class="chat-chips" id="chatChips">
-          <button class="chat-chip" onclick="sendChip(this)">How to prompt well</button>
-          <button class="chat-chip" onclick="sendChip(this)">Copilot in Outlook</button>
-          <button class="chat-chip" onclick="sendChip(this)">What AI can't do</button>
-          <button class="chat-chip" onclick="sendChip(this)">Email triage prompt</button>
-        </div>
-
-        <div class="chat-input-row">
-          <textarea id="chatInput" placeholder="Ask anything about AI at UJA..." rows="1"
-            onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();sendMessage();}"
-            oninput="this.style.height='auto';this.style.height=this.scrollHeight+'px'"></textarea>
-          <button class="chat-send-btn" onclick="sendMessage()">
-            <svg width="16" height="16" viewBox="0 0 24 24"><path d="M2 21l21-9L2 3v7l15 2-15 2z"/></svg>
-          </button>
-        </div>
-        <div class="chat-powered">Powered by Claude AI · UJA Internal Use Only</div>
       </div>
+
     </div>
   </section>
 
 </main>
 
 <footer>
-  <strong>UJA Federation of Greater Toronto</strong> · AI Start Here Guide · Internal Staff Use Only · v1.0 · 2026<br/>
-  <span style="margin-top:6px;display:block;">AI is a tool. You are the professional. The judgment, the relationships, and the responsibility remain yours.</span>
+  <strong>UJA Federation of Greater Toronto</strong> · AI Start Here Guide · Internal Staff Use Only · v1.0 · April 2026<br/>
+  <span style="margin-top:6px;display:block;font-style:italic;">"AI is a tool. You are the professional. The judgment, the relationships, and the responsibility remain yours."</span>
 </footer>
 
-<script>
-// ── PROMPT TABS ──
-document.querySelectorAll('.tab-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const cat = btn.dataset.cat;
-    document.querySelectorAll('.prompt-card').forEach(card => {
-      if (cat === 'all' || card.dataset.cat === cat) {
-        card.classList.add('visible');
-      } else {
-        card.classList.remove('visible');
-      }
-    });
-  });
-});
-
-// ── COPY PROMPT ──
-function copyPrompt(btn) {
-  const text = btn.closest('.prompt-card').querySelector('.prompt-text').textContent.trim();
-  navigator.clipboard.writeText(text).then(() => {
-    btn.textContent = 'Copied!';
-    setTimeout(() => btn.textContent = 'Copy', 2000);
-  });
-}
-
-// ── CHAT LOGIC ──
-const SYSTEM_PROMPT = `You are the UJA AI Start Here Guide — an internal AI assistant for staff at UJA Federation of Greater Toronto. You help staff use AI tools effectively and confidently.
-
-You have deep knowledge of:
-
-THE TEN COMMANDMENTS OF AI (UJA's principles):
-I. AI is a draft, not a deliverable. Review every word before it goes out.
-II. Use only UJA-approved enterprise AI (enterprise Copilot, ChatGPT, Claude). Never personal/free-tier accounts.
-III. Verify before you trust. AI invents facts with confidence.
-IV. Give AI context — it knows nothing about UJA unless you tell it.
-V. Be thoughtful about what you put in. Summarize or anonymize when in doubt.
-VI. Write in your voice, not the machine's. Rewrite if it sounds like a chatbot.
-VII. A human makes every decision — grants, donors, hiring, eligibility.
-VIII. Make it better, not just faster. Reinvest time into quality.
-IX. Iterate — the first draft is rarely the best. Push back and refine.
-X. Keep learning. AI changes fast. Share what works.
-
-DO'S: Drafting & editing, summarizing, brainstorming, explaining & translating (with human review), structuring documents.
-DON'TS: Unapproved tools, treating AI as final word, skipping verification, letting AI make decisions, skipping review.
-
-PROMPTING FRAMEWORK (4 ingredients): Role + Audience + Goal + Guardrail.
-6 TRICKS: Ask for options not answers, iterate with short redirects, use AI as editor (paste your draft), ask for the format, let AI ask you clarifying questions first, say "start over" when stuck.
-
-COPILOT TIPS:
-- Always tell Copilot WHERE to look: "using the emails from the last 7 days..."
-- Copilot drafts. Humans decide. Humans send.
-- Ask for structured outputs: tables, bullet lists, one-page briefs
-- Use it inside the app (Outlook Copilot for email, Teams for meetings, Word for docs)
-- Quick Response mode (click Auto → Quick Response) for fast answers that don't need deep search
-- Copilot searches ALL your files — it takes longer than ChatGPT because of scale
-
-COPILOT-SPECIFIC PROMPTS:
-- Focus review: "Based on my work across all platforms from the last 2 weeks — can you tell me where my focus has been?"
-- Email triage: "Review my unread emails from the last 24 hours. Group into: 1) Needs executive decision 2) Needs my response 3) Can be delegated 4) FYI only."
-- Pre-meeting prep: "For my meeting today with [NAME] about [TOPIC], find everything from last 2 weeks across email, Teams, shared folders that relates to [TOPIC]."
-- Commitment tracker: "Review my sent emails and Teams messages from today. List any follow-ups or commitments I made."
-- Meeting minutes in Word: "From these notes, create clean meeting minutes with: short summary, decisions, action items, items for follow-up. Use simple bullets. Flag uncertainty."
-- Researcher mode: Use Claude or Auto model for deep research (pre-meeting research, donor briefing).
-- Excel: Ask Copilot to work in a new tab first. Make copies before testing.
-- Policy lookup: "Based on the Employee Handbook in SharePoint, what is our policy on [X]?"
-
-UJA AI USE CASES:
-- Fundraising: donor prioritization, personalized outreach, next best actions, segmentation, risk signals
-- Jewish Journey: journey mapping, personalized engagement, staff augmentation
-- HR: talent assessment support, recruiting, memo/deck creation, video generation
-- Data: cleansing, predictive analytics, board matrix analysis
-- Legal: contract review, contract lifecycle management
-- Communications: social posts, newsletters, donor briefings, translation drafts
-
-SETTING UP YOUR AI PROFILE:
-- ChatGPT: "Custom Instructions"
-- Claude: "Styles" or "Profile"
-- Copilot: "Preferences" or work profile
-- Include: your role/team, your audiences (donors, lay committees, board), your voice/tone, UJA context, your defaults (options vs single answer, length, ask clarifying questions first)
-
-TROUBLESHOOTING:
-- "It made up a fact" → Treat all specifics as unverified. Check dates, names, figures.
-- "It sounds robotic" → Paste an email you liked and say "match this tone." Ban buzzwords.
-- "It ignored my instruction" → Shorten your prompt. One instruction at a time. Number requirements.
-- "I don't know what to ask" → Describe the situation and ask: "What questions should I answer before I start?"
-- "It keeps giving similar answers" → Explicitly change angle: "Try again, but funnier." "Now formal."
-- "It's getting UJA details wrong" → Give more context. Paste an old UJA email as example.
-
-PRE-SEND CHECKLIST:
-☐ Verified every name, date, dollar figure, quoted fact?
-☐ Sounds like ME, not a corporate chatbot?
-☐ Cut AI-ish phrases ("in today's fast-paced world," "excited to announce," "leverage," "empower")?
-☐ For community-sensitive/external content — looped in Communications?
-☐ Comfortable if manager saw this?
-
-TONE GUIDANCE: Be warm, practical, and encouraging. Staff may be anxious about AI. Meet them where they are. Use plain language. Give concrete examples. Keep answers focused and useful. If someone asks for a prompt, give them one they can copy directly. If they ask how to do something in Copilot vs another tool, explain the difference clearly.`;
-
-let conversationHistory = [];
-let isLoading = false;
-
-function addMessage(content, role, isHTML = false) {
-  const messages = document.getElementById('chatMessages');
-  const row = document.createElement('div');
-  row.className = 'msg-row' + (role === 'user' ? ' user' : '');
-  const avatar = document.createElement('div');
-  avatar.className = 'msg-avatar-sm';
-  avatar.textContent = role === 'user' ? 'You' : 'AI';
-  const bubble = document.createElement('div');
-  bubble.className = 'msg-bubble';
-  if (isHTML) {
-    bubble.innerHTML = content;
-  } else {
-    bubble.innerHTML = formatMessage(content);
-  }
-  row.appendChild(avatar);
-  row.appendChild(bubble);
-  messages.appendChild(row);
-  messages.scrollTop = messages.scrollHeight;
-  return bubble;
-}
-
-function formatMessage(text) {
-  return text
-    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-    .replace(/\*(.*?)\*/g, '<em>$1</em>')
-    .replace(/`(.*?)`/g, '<code style="background:#E8F0FB;padding:2px 5px;border-radius:3px;font-size:12px;">$1</code>')
-    .replace(/\n\n/g, '</p><p>')
-    .replace(/\n- /g, '</p><ul><li>')
-    .replace(/\n(\d+)\. /g, '</p><ol><li>')
-    .replace(/\n/g, '<br/>')
-    .replace(/^/, '<p>')
-    .replace(/$/, '</p>');
-}
-
-function showTyping() {
-  const messages = document.getElementById('chatMessages');
-  const row = document.createElement('div');
-  row.className = 'msg-row';
-  row.id = 'typingRow';
-  row.innerHTML = `<div class="msg-avatar-sm">AI</div><div class="msg-bubble"><div class="typing-indicator"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div></div>`;
-  messages.appendChild(row);
-  messages.scrollTop = messages.scrollHeight;
-}
-
-function removeTyping() {
-  const el = document.getElementById('typingRow');
-  if (el) el.remove();
-}
-
-async function sendMessage() {
-  if (isLoading) return;
-  const input = document.getElementById('chatInput');
-  const text = input.value.trim();
-  if (!text) return;
-
-  input.value = '';
-  input.style.height = 'auto';
-  addMessage(text, 'user');
-  conversationHistory.push({ role: 'user', content: text });
-
-  // Hide chips after first message
-  document.getElementById('chatChips').style.display = 'none';
-
-  isLoading = true;
-  showTyping();
-
-  try {
-    const response = await fetch('https://api.anthropic.com/v1/messages', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        model: 'claude-sonnet-4-20250514',
-        max_tokens: 1000,
-        system: SYSTEM_PROMPT,
-        messages: conversationHistory
-      })
-    });
-
-    const data = await response.json();
-    removeTyping();
-
-    const reply = data.content?.[0]?.text || "I'm sorry, I couldn't process that. Please try again.";
-    conversationHistory.push({ role: 'assistant', content: reply });
-    addMessage(reply, 'assistant');
-  } catch (err) {
-    removeTyping();
-    addMessage("Sorry, I'm having trouble connecting right now. Please try again in a moment.", 'assistant');
-  }
-
-  isLoading = false;
-}
-
-function sendChip(btn) {
-  const text = btn.textContent;
-  document.getElementById('chatInput').value = text;
-  sendMessage();
-}
-
-function sendSuggestion(btn) {
-  const text = btn.textContent.replace(/^[^\w]+/, '').trim();
-  document.getElementById('chatInput').value = text;
-  document.getElementById('chatbot').scrollIntoView({ behavior: 'smooth' });
-  setTimeout(sendMessage, 500);
-}
-</script>
 </body>
 </html>
